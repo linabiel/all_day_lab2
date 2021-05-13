@@ -22,6 +22,7 @@ const CountrySelector = ({countries, onCountrySelected, onFavClick, selectedCoun
             <option value="">Choose a Country</option>
             {countryOptions}
         </select>
+        {/* {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null } */}
         <span onClick={handleFavClick}>&#9734;</span>
         </>
     )

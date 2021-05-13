@@ -19,7 +19,7 @@ const CountryContainer = ()  =>   {
     };
 
     const onFavClick = function (country) {
-        const newFavList = favouriteCountries.push(country);
+        const newFavList = [...favouriteCountries, country];
         setFavouriteCountries(newFavList);
     };
 
