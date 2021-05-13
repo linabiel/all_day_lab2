@@ -28,10 +28,14 @@ const CountryContainer = ()  =>   {
         setSelectedCountry(country);
     };
 
+    const onFavouriteFiltered = function(checked) {
+        setFavouriteFilter(checked);
+    }
+
     return (
         <>
         
-        <CountrySelector countries={countries} onFavClick={onFavClick} onCountrySelected={onCountrySelected} selectedCountry={selectedCountry} />
+        <CountrySelector countries={countries} onFavClick={onFavClick} onCountrySelected={onCountrySelected} onFavouriteFiltered={onFavouriteFiltered} selectedCountry={selectedCountry} />
         {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null }
         <GetTotalPopulation countries={countries} />
         </>

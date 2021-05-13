@@ -1,17 +1,17 @@
 import React from "react";
 // import ListItem from './ListItem';
 
-const CountrySelector = ({countries, onCountrySelected, onFavClick, selectedCountry}) =>   {
+const CountrySelector = ({countries, onCountrySelected, onFavouriteFiltered, onFavClick, selectedCountry}) =>   {
 
     const handleCountryChange = function(event) {
         const chosenCountry = countries[event.target.value];
         onCountrySelected(chosenCountry);
     };
 
-    // const handleCheckboxChange = function(event) {
-    //     const displayFavourites = checkbox[event.target.value];
-    //     console.log('Checked')
-    // }
+    const handleCheckboxChange = function(event) {
+        const checked = event.target.checked;
+        onFavouriteFiltered(checked)
+    }
     
     const countryOptions = countries.map((country, index) => {
         return <option value={index} key={index}>{country.name}</option>
