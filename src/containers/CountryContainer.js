@@ -8,6 +8,7 @@ const CountryContainer = ()  =>   {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [favouriteCountries, setFavouriteCountries] = useState([]);
     const [favouriteFilter, setFavouriteFilter] = useState(false);
+    const [mappedCountries, setMappedCountries] = useState([]);
 
     useEffect(() =>  {
         getCountries();
@@ -35,7 +36,9 @@ const CountryContainer = ()  =>   {
     return (
         <>
         
-        <CountrySelector countries={countries} onFavClick={onFavClick} onCountrySelected={onCountrySelected} onFavouriteFiltered={onFavouriteFiltered} selectedCountry={selectedCountry} />
+        <CountrySelector countries={countries} onFavClick={onFavClick} onCountrySelected={onCountrySelected} favouriteCountries={favouriteCountries}
+        onFavouriteFiltered={onFavouriteFiltered} selectedCountry={selectedCountry} favouriteFilter={favouriteFilter} mappedCountries={mappedCountries} setMappedCountries={setMappedCountries} />
+
         {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null }
         <GetTotalPopulation countries={countries} />
         </>
