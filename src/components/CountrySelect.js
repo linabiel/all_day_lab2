@@ -1,11 +1,10 @@
 import React, {useEffect} from "react";
-// import ListItem from './ListItem';
 
 const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFavouriteFiltered, onFavClick, selectedCountry, favouriteFilter, mappedCountries, setMappedCountries}) =>   {
 
     useEffect(() =>  {
         getCountryOptions();
-    }, []);
+    }, [countries, favouriteFilter]);
 
     const handleCountryChange = function(event) {
         const chosenCountry = countries[event.target.value];
@@ -20,7 +19,7 @@ const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFa
     const getCountryOptions = function () {
         let favourites
         if (favouriteFilter) {
-            favourites = countries.map((country, index) => {
+            favourites = favouriteCountries.map((country, index) => {
         
         return <option value={index} key={index}>{country.name}</option>}
         )} else {
