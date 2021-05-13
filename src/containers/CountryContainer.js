@@ -24,8 +24,7 @@ const CountryContainer = ()  =>   {
     return (
         <>
         <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
-        {}
-        <CountryDetail selectedCountry={selectedCountry}/>
+        {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null }
         <GetTotalPopulation countries={countries} />
         </>
     )
