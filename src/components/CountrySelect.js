@@ -3,10 +3,15 @@ import React from "react";
 
 const CountrySelector = ({countries, onCountrySelected, onFavClick, selectedCountry}) =>   {
 
-    const handleChange = function(event) {
+    const handleCountryChange = function(event) {
         const chosenCountry = countries[event.target.value];
         onCountrySelected(chosenCountry);
     };
+
+    // const handleCheckboxChange = function(event) {
+    //     const displayFavourites = checkbox[event.target.value];
+    //     console.log('Checked')
+    // }
     
     const countryOptions = countries.map((country, index) => {
         return <option value={index} key={index}>{country.name}</option>
@@ -18,7 +23,7 @@ const CountrySelector = ({countries, onCountrySelected, onFavClick, selectedCoun
 
     return(
         <>
-        <select defaultValue="" onChange={handleChange}>
+        <select defaultValue="" onChange={handleCountryChange}>
             <option value="">Choose a Country</option>
             {countryOptions}
         </select>

@@ -7,6 +7,7 @@ const CountryContainer = ()  =>   {
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [favouriteCountries, setFavouriteCountries] = useState([]);
+    const [favouriteFilter, setFavouriteFilter] = useState(false);
 
     useEffect(() =>  {
         getCountries();
