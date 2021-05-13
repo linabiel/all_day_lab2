@@ -6,7 +6,7 @@ import GetTotalPopulation from '../components/TotalPopulation'
 const CountryContainer = ()  =>   {
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null);
-    const [favouriteCountries, setFavouriteCountries] = useSate([]);
+    const [favouriteCountries, setFavouriteCountries] = useState([]);
 
     useEffect(() =>  {
         getCountries();
@@ -19,7 +19,8 @@ const CountryContainer = ()  =>   {
     };
 
     const onFavClick = function (country) {
-        favouriteCountries.push(country);
+        const newFavList = favouriteCountries.push(country);
+        setFavouriteCountries(newFavList);
     };
 
     const onCountrySelected = function(country){
