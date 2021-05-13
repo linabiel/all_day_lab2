@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-// import CountryDetail from '../components/CountryDetail';
+import CountryDetail from '../components/CountryDetails';
 import CountrySelector from '../components/CountrySelect'
 import GetTotalPopulation from '../components/TotalPopulation'
 
@@ -25,6 +24,8 @@ const CountryContainer = ()  =>   {
     return (
         <>
         <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
+        {}
+        <CountryDetail selectedCountry={selectedCountry}/>
         <GetTotalPopulation countries={countries} />
         </>
     )
