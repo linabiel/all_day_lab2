@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 
-const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFavouriteFiltered, onFavClick, selectedCountry, favouriteFilter, mappedCountries, setMappedCountries}) =>   {
+const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFavouriteFiltered, onFavClick, selectedCountry, 
+    favouriteFilter, mappedCountries, setMappedCountries}) =>   {
 
     useEffect(() =>  {
         getCountryOptions();
@@ -29,21 +30,6 @@ const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFa
         }
         setMappedCountries(favourites)
     };
-    
-
-    // const getCountryOptions = () => {
-    // if (favouriteFilter) {
-    //     const countryOptions = countries.map((country, index) => {
-    //     return <option value={index} key={index}>{country.name}</option>
-    // });
-
-    // }
-    // else {
-    //     const countryOptions = countries.map((country, index) => {
-    //         return <option value={index} key={index}>{country.name}</option>
-    //     });
-    // }
-    // }
 
     const handleFavClick = function(){
         onFavClick(selectedCountry)
@@ -55,7 +41,6 @@ const CountrySelector = ({countries, onCountrySelected, favouriteCountries, onFa
             <option value="">Choose a Country</option>
             {mappedCountries}
         </select>
-        {/* {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null } */}
         
         <p>Show favourites only: 
         <input type="checkbox" id="checkbox" onClick={handleCheckboxChange}></input>
