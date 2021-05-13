@@ -23,7 +23,11 @@ const CountrySelector = ({countries, onCountrySelected, onFavClick, selectedCoun
             {countryOptions}
         </select>
         {/* {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null } */}
-        <span onClick={handleFavClick}>&#9734;</span>
+        
+        <p>Show favourites only: 
+        <input type="checkbox" id="checkbox"></input>
+        </p>
+        <p onClick={handleFavClick}>Add to favourites: &#9734;</p>
         </>
     )
 
