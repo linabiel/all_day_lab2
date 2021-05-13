@@ -13,10 +13,13 @@ const CountrySelector = ({countries, onCountrySelected}) =>   {
     })
 
     return(
+        <>
         <select defaultValue="" onChange={handleChange}>
             <option value="">Choose a Country</option>
             {countryOptions}
         </select>
+        <span>&#9734;</span>
+        </>
     )
 
 }
